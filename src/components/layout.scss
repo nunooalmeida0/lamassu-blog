@@ -620,3 +620,89 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+////////////////// NUNO CSS ////////////////////
+
+$font-primary: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+$font-secondary: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+$font-body: Georgia, 'Times New Roman', Times, serif;
+
+
+//COLORS
+$gray: #9B9B9B;
+$black: #4A4A4A;
+$light-gray: #D8D8D8;
+
+
+.post-wrapper{
+  color: $black;
+  padding-top:80px;
+}
+
+.post-title{
+  max-width: 612px;
+  font-family: $font-primary;
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+.post-subtitle{
+  font-family: $font-secondary;
+  font-size:32px;
+  font-weight: 400;
+  color: $gray;
+  margin-bottom: 40px;
+}
+
+.author-wrapper{
+  margin-bottom: 52px;
+  display:flex;
+  align-items: center;
+  justify-content: left;
+
+  .author-profile{
+
+    width: 72px;
+    height: 72px;
+    background-color: $light-gray;
+    border-radius: 100px;
+    margin-right: 32px;
+  }
+
+  .author-info{
+    font-family: $font-secondary;
+    .author-name{
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .author-position{
+      font-size: 14px;
+      font-weight: 300;
+    }
+  } 
+
+}
+
+.heroImageWrapper{
+  position: relative;
+  margin-bottom: 72px;
+}
+
+.heroImage{
+  position: absolute;
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.post-content{
+  font-family: $font-body;
+  font-size: 24px;
+  line-height: 136%;
+  font-weight: 500;
+  margin-bottom: 112px;
+
+}
+
+
+
