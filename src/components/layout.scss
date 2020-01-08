@@ -704,5 +704,140 @@ $light-gray: #D8D8D8;
 
 }
 
+//Homepage
+
+.post-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 120px 0 0 0;
+  h1{
+    font-family: $font-primary;
+  }
+  h2{
+    font-family: $font-secondary;
+  }
+  a{
+    text-decoration: none;
+    color: $black;
+  }
+  li{
+    list-style-type: none;
+
+  }
+}
+
+// .post-list li:first-child{
+//   background-color: red;
+//   width: 100%;
+// }
+.hero-post{
+  flex-basis: 100%;
+  display: inline-block;  
+  margin-bottom: 80px;
+  .post-thumbnail{
+    width: 50%;
+    height: 360px;
+    float: left;
+    margin-right: 56px;
+  }
+  h1{
+    font-size:36px;
+    line-height: 38px;
+    margin-bottom: 16px;
+  }
+  h2{
+    font-size: 24px;
+    font-weight: 500;
+    color: $gray;
+  }
+}
+.post-item{
+  //border: 0.2px solid $light-gray;
+  //border-radius: 20px;
+  //flex-grow:1;
+  width: 33%;
+  margin-top: 32px;
+  position: relative;
+  display: flex;
+  //height:500px;
+  flex-direction: column;
+  @for $i from 1 through 10 {
+    padding:32px;
+    @if $i%3{
+      .post-item#{$i}{
+      padding-right: 0;
+     }
+    }  
+  }
+  .title-wrapper{
+    margin-bottom: 12px;
+  }
+
+  .post-item-info{
+    height: calc(100% - 200px);
+    //min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:0 8px;
+  }
+  
+  .post-thumbnail{ 
+    height: 200px;
+    margin-bottom: 24px;
+    max-width:100%
+  }
+   .author-wrapper{
+     font-family: $font-secondary;
+     margin-bottom: 24px;
+
+     .author-profile{
+      width:40px;
+      height:40px;
+      margin-right: 20px;
+    }
+     .author-name{
+       font-size: 16px;
+     }
+     .author-position{
+       font-size: 12px;
+     }
+
+   }
+
+  h3{
+    font-family: $font-primary;
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  h4{
+    font-family: $font-secondary;
+    font-size: 18px;
+    font-weight: 500;
+    color: $gray;
+  }
+  .post-date{
+    font-size:16px;
+    margin-bottom: 4px;
+  }
+}
+
+.post-date{
+  font-family: $font-secondary;
+  font-size:20px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.post-item a{
+  height: 100%;
+}
+
+
+
+
+
+
 
 

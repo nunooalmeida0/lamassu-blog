@@ -2,34 +2,69 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import Img from "gatsby-image"
 
-const IndexPage = ({data}) => (
+
+const IndexPage = ({data}) => {
+  return (
   <Layout>
     <SEO title="Home" />
-    {/* <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> */}
-    <h2>List of blog posts</h2>
-    {data.allMarkdownRemark.edges.map(post => (
-      <ul>
-        <li>
-          <Link
-            key={post.node.id}
-            to={post.node.frontmatter.path}>
-            {post.node.frontmatter.title}
-          </Link>
-        </li>
-      </ul>
-
-    ))}
+    <ul className="post-list">
+      {data.allMarkdownRemark.edges.map((post,i) =>{
+      if (i===0){
+        return(
+          <li className="hero-post">
+            <Link
+              key={post.node.id}
+              to={post.node.frontmatter.path}>   
+              <Img className="post-thumbnail" fluid={post.node.frontmatter.featuredImage.childImageSharp.fluid} />
+              <div className="post-list-info">
+                  <h6 className="post-date">{post.node.frontmatter.date}</h6>
+                  <h1>{post.node.frontmatter.title}</h1>
+                  <h2>{post.node.frontmatter.subtitle}</h2>   
+                <div className="author-wrapper">
+                   <div className="author-profile"></div>
+                    <div className="author-info">
+                        <h5 className="author-name">{post.node.frontmatter.author}</h5>
+                        <h6 className="author-position">Graphic Designer</h6>
+                    </div>
+                 </div> 
+              </div>
+            </Link>
+          </li>
+        )}
+        else{
+        return (
+          <li className={"post-item " + i}>
+            <Link
+                key={post.node.id}
+                to={post.node.frontmatter.path}>
+                  <Img className="post-thumbnail" fluid={post.node.frontmatter.featuredImage.childImageSharp.fluid} />   
+                <div className="post-item-info">
+                  <div className="title-wrapper">
+                    <h6 className="post-date">{post.node.frontmatter.date}</h6>
+                    <h3>{post.node.frontmatter.title}</h3>
+                    <h4>{post.node.frontmatter.subtitle}</h4>    
+                  </div>
+                  <div className="author-wrapper">
+                    <div className="author-profile"></div>
+                    <div className="author-info">
+                        <h5 className="author-name">{post.node.frontmatter.author}</h5>
+                        <h6 className="author-position">Graphic Designer</h6>
+                    </div>
+                 </div> 
+                </div>
+              </Link>
+          </li>
+          )
+        }
+      })}
+    </ul>
   </Layout>
-)
+  )
+}
+
 
 export const pageQuery = graphql `
   query IndexQuery {
@@ -47,9 +82,10 @@ export const pageQuery = graphql `
             path
             published
             date
-            featuredImage{
+            author
+            featuredImage {
               childImageSharp {
-                fluid(maxWidth: 800) {
+                fluid(maxWidth: 1200) {
                   ...GatsbyImageSharpFluid
                 }
               }

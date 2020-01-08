@@ -3,7 +3,7 @@ path: '/second-post'
 title: 'We are now Lamassu AG of Lucerne, Switzerland'
 subtitle: 'But you can still call us Lamassu'
 published: true
-date: '2020-01-03'
+date: '2020-01-06'
 featuredImage: Lucerne.jpeg
 author: 'Zach Harvey'
 ---

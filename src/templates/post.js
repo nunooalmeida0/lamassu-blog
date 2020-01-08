@@ -56,6 +56,7 @@ export const postQuery = graphql `
                 subtitle
                 published
                 date
+                author
                 featuredImage {
                     childImageSharp {
                       fluid(maxWidth: 800) {
