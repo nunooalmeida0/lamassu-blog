@@ -12,7 +12,7 @@ For years we’ve been searching for a home to call our own and we’ve finally 
 
 Crypto Valley is alive and kicking and we’re excited to be in an area so rich in crypto development and blockchain events. Although hype often exceeds reality in cryptoland, exciting stuff is happening in Switzerland at every level. Open source Bitcoin and Lightning Network nodes are being hacked together, hardware wallets are being designed and manufactured, the world’s leading cryptocurrency regulations are being carefully guided, world-class meetups and events are happening, and lots of Bitcoin ATMs are being deployed.
 
-![Studio shot](content-images/studio.jpeg)
+![Studio shot](/content-images/studio.jpeg)
 
 
 The cryptomat industry (aka Bitcoin ATMs) is booming and while we grow, we want to be in a place where rules are well defined and regulators are pro-innovation.
