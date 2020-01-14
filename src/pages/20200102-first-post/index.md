@@ -5,7 +5,7 @@ subtitle: 'But you can still call us Lamassu'
 published: true
 date: '2020-01-06'
 featuredImage: studio.jpeg
-author: 'Nuno Almeida'
+author: 'Josh Harvey'
 ---
 
 # Hello!

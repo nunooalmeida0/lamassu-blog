@@ -29,8 +29,8 @@ export default ({ data }) => {
             <div className="author-wrapper">
               <div className="author-profile"></div>
                   <div className="author-info">
-                      <h5 className="author-name">Nuno Almeida</h5>
-                      <h6 className="author-position">Graphic Designer</h6>
+                      <h5 className="author-name">{post.frontmatter.author.id}</h5>
+                      <h6 className="author-position">{post.frontmatter.author.role}</h6>
                   </div>
             </div>
           </div>
@@ -42,8 +42,8 @@ export default ({ data }) => {
             <div className="author-wrapper">
               <div className="author-profile"></div>
                   <div className="author-info">
-                      <h5 className="author-name">Nuno Almeida</h5>
-                      <h6 className="author-position">Graphic Designer</h6>
+                      <h5 className="author-name">{post.frontmatter.author.id}</h5>
+                      <h6 className="author-position">{post.frontmatter.author.role}</h6>
                   </div>
             </div>
           </div>
@@ -53,25 +53,28 @@ export default ({ data }) => {
 }
 
 export const postQuery = graphql `
-    query BlogPostByPath($path: String!){
-        markdownRemark(frontmatter: { path: { eq: $path} }) {
-            html
+query BlogPostByPath($path: String!){
+  markdownRemark(frontmatter: { path: { eq: $path} }) {
+      html
+      id
+      frontmatter {
+          path
+          title
+          subtitle
+          published
+          date(formatString: "MMMM D Y")
+          author{
             id
-            frontmatter {
-                path
-                title
-                subtitle
-                published
-                date
-                author
-                featuredImage {
-                    childImageSharp {
-                      fluid(maxWidth: 1200) {
-                        ...GatsbyImageSharpFluid
-                      }
-                    }
-                  }
+            role
+          }
+          featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 1200) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
-        }
-    }
+      }
+  }
+}
 `

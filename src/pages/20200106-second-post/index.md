@@ -5,7 +5,7 @@ subtitle: 'But you can still call us Lamassu'
 published: true
 date: '2020-01-03'
 featuredImage: Lucerne.jpeg
-author: 'Zach Harvey'
+author: 'Nuno Almeida'
 ---
 
 For years we’ve been searching for a home to call our own and we’ve finally found it in the majestic Swiss canton of Lucerne.

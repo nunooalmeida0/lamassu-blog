@@ -27,8 +27,8 @@ const IndexPage = ({data}) => {
                 <div className="author-wrapper">
                    <div className="author-profile"></div>
                     <div className="author-info">
-                        <h5 className="author-name">{post.node.frontmatter.author}</h5>
-                        <h6 className="author-position">Graphic Designer</h6>
+                        <h5 className="author-name">{post.node.frontmatter.author.id}</h5>
+                        <h6 className="author-position">{post.node.frontmatter.author.role}</h6>
                     </div>
                  </div> 
               </div>
@@ -51,8 +51,8 @@ const IndexPage = ({data}) => {
                   <div className="author-wrapper">
                     <div className="author-profile"></div>
                     <div className="author-info">
-                        <h5 className="author-name">{post.node.frontmatter.author}</h5>
-                        <h6 className="author-position">Graphic Designer</h6>
+                        <h5 className="author-name">{post.node.frontmatter.author.id}</h5>
+                        <h6 className="author-position">{post.node.frontmatter.author.role}</h6>
                     </div>
                  </div> 
                 </div>
@@ -82,8 +82,11 @@ export const pageQuery = graphql `
             subtitle
             path
             published
-            date
-            author
+            date(formatString: "MMMM D Y")
+            author {
+              id
+              role
+            }
             featuredImage {
               childImageSharp {
                 fluid(maxWidth: 1200) {
