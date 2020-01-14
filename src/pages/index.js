@@ -8,8 +8,9 @@ import Img from "gatsby-image"
 
 const IndexPage = ({data}) => {
   return (
+ 
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Home"></SEO>
     <ul className="post-list">
       {data.allMarkdownRemark.edges.map((post,i) =>{
       if (i===0){
