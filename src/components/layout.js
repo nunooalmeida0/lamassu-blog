@@ -12,6 +12,7 @@ import { useStaticQuery, graphql} from "gatsby"
 //import Header from "./header"
 import "./layout.scss"
 import Header from "./header"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -37,12 +38,9 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, 
-          {` `}
-          <a href="https://lamassu.is" target="_blanc">Lamassu Industries AG</a>
-        </footer>
+        
       </div>
+      <Footer />
     </>
   )
 }
