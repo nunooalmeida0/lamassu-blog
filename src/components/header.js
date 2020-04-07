@@ -5,12 +5,21 @@ import React from "react"
 
 const Header = ({ siteTitle }) => (
   <header>
-    <div className="menu-wrapper">
+    <div className="menu-wrapper" data-menu-toggle for="hamburger-menu-toggle-1">
+
+    <input id="hamburger-menu-toggle-1" type="checkbox"/>
       <a className="menu-item" href="https://lamassu.is">
         <img className="logo" src={'../../logo.svg'} alt="Lamassu logo"/> 
       </a>
+      <label id="burger" className="menu-item" for="hamburger-menu-toggle-1">
+      <span className="hamburger" >
+        <span className="icon-bar top-bar"></span>
+        <span className="icon-bar middle-bar"></span>
+        <span className="icon-bar bottom-bar"></span>
+      </span>
+    </label>
       
-      <ul className="header-list">
+      <ul className="header-list" data-menu-toggle for="hamburger-menu-toggle-1">
         <li className="menu-item">
           <a href="https://lamassu.is/products" title="Products">Products</a>
         </li>
